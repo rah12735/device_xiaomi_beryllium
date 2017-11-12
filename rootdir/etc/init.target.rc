@@ -31,6 +31,15 @@ on boot
     chown cameraserver root /sys/class/thermal/thermal_message/boost
     chmod 0664 /sys/class/thermal/thermal_message/boost
 
+# Safetynet bypass
+# Inspired in magisk source code, by topjohnwu
+# Ported to ramdisk by jhenrique09
+
+on property:sys.boot_completed=1
+    # selinux nodes, hide permissive state
+    chmod 0640 /sys/fs/selinux/enforce
+    chmod 0440 /sys/fs/selinux/policy
+
 service remosaic_daemon /vendor/bin/remosaic_daemon
     class late_start
     user camera
