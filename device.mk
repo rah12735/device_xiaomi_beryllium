@@ -75,6 +75,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_BOARD_PLATFORM := sdm845
 PRODUCT_USES_QCOM_HARDWARE := true
 
+# HALS
+SRC_AUDIO_HAL_DIR := hardware/qcom-caf/sdm845/audio
+SRC_DISPLAY_HAL_DIR := hardware/qcom-caf/sdm845/display
+SRC_MEDIA_HAL_DIR := hardware/qcom-caf/sdm845/media
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/qcom-caf/sdm845
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/uinput-fpc.idc:system/usr/idc/uinput-fpc.idc \
