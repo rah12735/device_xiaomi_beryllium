@@ -1,8 +1,9 @@
-#
+ #
 # Copyright (C) 2018-2020 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+USE_GAPPS := true
 
 $(call inherit-product, device/xiaomi/beryllium/device.mk)
 
@@ -13,10 +14,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
 # Inherit some common OctaviOS stuff.
-$(call inherit-product, vendor/octavi/config/common_full_phone.mk)
-
+$(call inherit-product, vendor/kangos/config/common.mk)
+ 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := octavi_beryllium
+PRODUCT_NAME := kangos_beryllium
 PRODUCT_DEVICE := beryllium
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := POCO F1
